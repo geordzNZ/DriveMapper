@@ -23,7 +23,7 @@ namespace DriveMapper
                     Console.WriteLine($"\t\t{file}");
                 }
             }
-            else
+            else if (args[0].ToLower() == "current")
             {
                 string currDir = Directory.GetCurrentDirectory();
 
@@ -32,12 +32,17 @@ namespace DriveMapper
                 foreach (var dir in Directory.EnumerateDirectories(currDir))
                 {
                     Console.WriteLine($"\t\t{dir}");
+                    foreach (var file in Directory.GetFiles(dir))
+                    {
+                        Console.WriteLine($"\t\t{file}");
+                    }
                 }
-                Console.WriteLine($"\tFILES");
-                foreach (var file in Directory.GetFiles(currDir))
-                {
-                    Console.WriteLine($"\t\t{file}");
-                }
+
+            }
+            else
+            {
+                Console.WriteLine($"No directory specified");
+                Console.WriteLine($"{args[0].ToLower()}");
             }
 
         }
