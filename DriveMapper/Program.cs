@@ -34,7 +34,7 @@ namespace DriveMapper
                     Console.WriteLine($"\t\t{dir}");
                     foreach (var file in Directory.GetFiles(dir))
                     {
-                        Console.WriteLine($"\t\t{file}");
+                        Console.WriteLine($"\t\t\t{file}");
                     }
                 }
 
