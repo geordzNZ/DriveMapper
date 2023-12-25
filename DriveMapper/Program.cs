@@ -28,7 +28,7 @@ namespace DriveMapper
                 string currDir = Directory.GetCurrentDirectory();
 
                 Console.WriteLine("Listing contents of current directory...");
-                Console.WriteLine($"\tDIRECTORIES");
+                //Console.WriteLine($"\tDIRECTORIES");
                 foreach (var dir in Directory.EnumerateDirectories(currDir))
                 {
                     Console.WriteLine($"\t\t{dir}");
