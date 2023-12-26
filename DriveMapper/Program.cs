@@ -11,16 +11,13 @@ namespace DriveMapper
             if (args.Length == 0)
             {
                 Console.WriteLine("Listing contents of C Drive...");
-                Console.WriteLine($"\tDIRECTORIES");
                 foreach (var dir in Directory.EnumerateDirectories(@"C:\"))
                 {
                     Console.WriteLine($"\t\t{dir}");
-                }
-                Console.WriteLine($"\tFILES");
-                //foreach (var file in Directory.GetFiles(@"C:\"))
-                foreach (var file in Directory.GetFiles(@"C:\"))
-                {
-                    Console.WriteLine($"\t\t{file}");
+                    foreach (var file in Directory.GetFiles(dir))
+                    {
+                        Console.WriteLine($"\t\t\t{file}");
+                    }
                 }
             }
             else if (args[0].ToLower() == "current")
@@ -28,7 +25,6 @@ namespace DriveMapper
                 string currDir = Directory.GetCurrentDirectory();
 
                 Console.WriteLine("Listing contents of current directory...");
-                //Console.WriteLine($"\tDIRECTORIES");
                 foreach (var dir in Directory.EnumerateDirectories(currDir))
                 {
                     Console.WriteLine($"\t\t{dir}");
